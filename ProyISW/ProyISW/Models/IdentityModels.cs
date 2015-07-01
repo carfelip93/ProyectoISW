@@ -13,5 +13,7 @@ namespace ProyISW.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<ProyISW.Models.Usuario> Usuarios { get; set; }
     }
 }

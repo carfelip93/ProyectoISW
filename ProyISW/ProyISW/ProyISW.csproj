@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201507020216062_prueba.Designer.cs">
       <DependentUpon>201507020216062_prueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507020228014_prueba1.cs" />
+    <Compile Include="Migrations\201507020228014_prueba1.Designer.cs">
+      <DependentUpon>201507020228014_prueba1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507020216062_prueba.resx">
       <DependentUpon>201507020216062_prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507020228014_prueba1.resx">
+      <DependentUpon>201507020228014_prueba1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

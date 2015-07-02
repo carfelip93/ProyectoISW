@@ -123,5 +123,51 @@ namespace ProyISW.Controllers
             }
             base.Dispose(disposing);
         }
+        
+        public ActionResult Login(string Nombre, string Contraseña)
+        {
+            ViewBag.Nombre = Nombre;
+            ViewBag.Contraseña = Contraseña;
+
+
+            using (var db = new ApplicationDbContext())
+            {
+                var query = (from u in db.Usuarios
+                             where u.Nombre == Nombre
+                             select u);
+                // 
+
+
+                if (query.Count() > 0 && query != null)
+                {
+                    Usuario myUser = query.First();
+
+                  
+
+                    if (Contraseña.Equals(myUser.Contraseña) && Nombre.Equals(myUser.Nombre))
+                    {
+                        Session.Add("userId", myUser.Id);
+                        Session.Add("username", myUser.Nombre);
+                        Session.Add("rol", myUser.Rol);
+                        return Redirect("/Home/");
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Usuario o Contraseña incorrecta";
+                        //ViewBag.LabelError = "Error al ingresar datos";
+                        return View();
+                    }
+
+
+                }
+                else
+                {
+
+                    //ViewBag.LabelError = "Error al ingresar datos";
+                    return View();
+                }
+            }
+        }
     }
 }
+

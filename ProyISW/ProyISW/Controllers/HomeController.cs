@@ -12,7 +12,12 @@ namespace ProyISW.Controllers
         {
             return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
 
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
